@@ -1,11 +1,37 @@
-# Test your FastAPI endpoints
+# Test Book endpoints
 
-GET http://127.0.0.1:8000/
+### Get all books
+GET http://localhost:8000/books
 Accept: application/json
 
-###
-
-GET http://127.0.0.1:8000/hello/User
+### Get a book by ID
+GET http://localhost:8000/books/1
 Accept: application/json
 
-###
+
+### Create a new book
+POST http://localhost:8000/books
+Accept: application/json
+
+{
+  "id": {{$uuid}},
+  "title": {{$uuid}}}
+  "price": {{$randomInt}},
+  "created_at": {{$timestamp}},
+}
+
+### Update a book
+PUT http://localhost:8000/books/1
+Accept: application/json
+
+{
+  "id": {{$uuid}},
+  "title": {{$uuid}}}
+  "price": {{$randomInt}},
+  "created_at": {{$timestamp}},
+}
+
+### Delete a book by ID
+DELETE http://localhost:8000/books/1
+Accept: application/json
+
